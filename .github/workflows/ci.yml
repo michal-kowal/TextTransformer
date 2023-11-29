@@ -16,16 +16,3 @@ jobs:
           cache: maven
       - name: Validate, build and run tests
         run: mvn --batch-mode --update-snapshots verify
-
-      - name: Send mail
-        if: failure()
-        uses: dawidd6/action-send-mail@v2
-        with:
-          server_address: poczta.interia.pl
-          server_port: 587
-          username: ${{ secrets.EMAIL_USERNAME }}
-          password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
-          body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
-          to: ${{ secrets.NOTIFY_EMAIL }}
-          from: ${{ secrets.EMAIL_USERNAME }}
