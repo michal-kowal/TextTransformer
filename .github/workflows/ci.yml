@@ -16,3 +16,17 @@ jobs:
           cache: maven
       - name: Validate, build and run tests
         run: mvn --batch-mode --update-snapshots verify
+
+      - name: Send mail
+        if: failure()
+        uses: dawidd6/action-send-mail@v2
+        with:
+          server_address: ${{ secrets.EMAIL_SERVER }}
+          server_port: ${{ secrets.EMAIL_PORT }}
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "Build Failure - ${{ github.repository }}"
+          to: ${{ secrets.NOTIFY_EMAIL }}
+          from: ${{ secrets.EMAIL_USERNAME }}
+          body: |
+            The build for the repository ${{ github.repository }} has failed.
