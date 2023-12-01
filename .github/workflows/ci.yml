@@ -16,6 +16,12 @@ jobs:
           cache: maven
       - name: Validate, build and run tests
         run: mvn --batch-mode --update-snapshots verify
+      - name: Publish Artifact
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: TextTransformer
+          path: artifacts/*.jar
       - name: Send mail
         if: failure()
         uses: dawidd6/action-send-mail@v2
