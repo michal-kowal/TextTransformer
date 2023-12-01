@@ -16,12 +16,11 @@ jobs:
           cache: maven
       - name: Validate, build and run tests
         run: mvn --batch-mode --update-snapshots verify
-      - name: Publish Artifact
-        if: success()
-        uses: actions/upload-artifact@v3
+      - run: mkdir staging && cp target/*.jar staging
+      - uses: actions/upload-artifact@v3
         with:
           name: TextTransformer
-          path: target/*.jar
+          path: staging
       - name: Send mail
         if: failure()
         uses: dawidd6/action-send-mail@v2
