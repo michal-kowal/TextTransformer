@@ -21,7 +21,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: TextTransformer
-          path: artifacts/*.jar
+          path: target/*.jar
       - name: Send mail
         if: failure()
         uses: dawidd6/action-send-mail@v2
