@@ -24,7 +24,8 @@ public class TextTransformerController {
         Map.entry("upper", "UpperTextDecorator"),
         Map.entry("lower", "LowerTextDecorator"),
         Map.entry("capitalize", "CapitalizeTextDecorator"),
-        Map.entry("inverse", "InverseTextDecorator")
+        Map.entry("inverse", "InverseTextDecorator"),
+        Map.entry("eliminate", "EliminateTextDecorator")
 
     );
 
