@@ -23,7 +23,8 @@ public class TextTransformerController {
     Map<String, String> mapOfClassNames = Map.ofEntries(
         Map.entry("upper", "UpperTextDecorator"),
         Map.entry("lower", "LowerTextDecorator"),
-        Map.entry("capitalize", "CapitalizeTextDecorator")
+        Map.entry("capitalize", "CapitalizeTextDecorator"),
+        Map.entry("inverse", "InverseTextDecorator")
 
     );
 
