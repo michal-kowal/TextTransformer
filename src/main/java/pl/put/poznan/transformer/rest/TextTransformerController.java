@@ -25,8 +25,8 @@ public class TextTransformerController {
         Map.entry("lower", "LowerTextDecorator"),
         Map.entry("capitalize", "CapitalizeTextDecorator"),
         Map.entry("inverse", "InverseTextDecorator"),
-        Map.entry("eliminate", "EliminateTextDecorator")
-
+        Map.entry("eliminate", "EliminateTextDecorator"),
+        Map.entry("minimize", "MinimizeTextDecorator")
     );
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
