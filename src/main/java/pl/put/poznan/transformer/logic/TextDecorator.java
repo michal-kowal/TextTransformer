@@ -9,6 +9,9 @@ public abstract class TextDecorator implements Transformer {
 
     @Override
     public String transform(String text){
-        return transformer.transform(text);
+        String transformed = transformer.transform(text);
+        return transformed;
     }
+
+    public abstract String decorate(String text);
 }
