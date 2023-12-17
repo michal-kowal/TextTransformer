@@ -21,6 +21,18 @@ jobs:
         with:
           name: TextTransformer
           path: staging
+          
+      - name: Generuj Javadoc
+        run: mvn javadoc:javadoc
+      - uses: actions/upload-artifact@v3
+        with:
+          name: TextTransformer
+          path: staging
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Javadoc
+          path: target/site/apidocs
+      
       - name: Send mail
         if: failure()
         uses: dawidd6/action-send-mail@v2
