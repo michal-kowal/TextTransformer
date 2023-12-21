@@ -30,8 +30,7 @@ public class TextTransformerController {
             Map.entry("minimize", "MinimizeTextDecorator"),
             Map.entry("expand", "ExpandTextDecorator"),
             Map.entry("latex", "LatexTextDecorator"),
-            Map.entry("strip", "StripTextDecorator"),
-            Map.entry("tag", "TagTextDecorator"));
+            Map.entry("strip", "StripTextDecorator"));
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public String get(@PathVariable String text,
