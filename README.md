@@ -25,5 +25,6 @@ Available actions:
 - minimize
 - expand
 - latex
+- strip
 
 Swagger dashboard is available at ```http://localhost:8080/swagger-ui/index.html```
