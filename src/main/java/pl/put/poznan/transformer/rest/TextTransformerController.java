@@ -29,7 +29,8 @@ public class TextTransformerController {
         Map.entry("eliminate", "EliminateTextDecorator"),
         Map.entry("minimize", "MinimizeTextDecorator"),
         Map.entry("expand", "ExpandTextDecorator"),
-        Map.entry("latex", "LatexTextDecorator")
+        Map.entry("latex", "LatexTextDecorator"),
+        Map.entry("tag", "TagTextDecorator")
     );
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
