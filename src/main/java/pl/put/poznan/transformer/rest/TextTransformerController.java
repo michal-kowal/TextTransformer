@@ -5,10 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.google.gson.Gson;
 
-import pl.put.poznan.transformer.logic.ExpandTextDecorator;
-import pl.put.poznan.transformer.logic.TextDecorator;
-import pl.put.poznan.transformer.logic.TextTransformer;
-import pl.put.poznan.transformer.logic.Transformer;
+import pl.put.poznan.transformer.logic.*;
 import pl.put.poznan.transformer.rest.response.TextTransformerResponse;
 
 import java.util.Arrays;
@@ -29,7 +26,8 @@ public class TextTransformerController {
         Map.entry("eliminate", "EliminateTextDecorator"),
         Map.entry("minimize", "MinimizeTextDecorator"),
         Map.entry("expand", "ExpandTextDecorator"),
-        Map.entry("latex", "LatexTextDecorator")
+        Map.entry("latex", "LatexTextDecorator"),
+        Map.entry("hour", "HourTextDecorator")
     );
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
