@@ -8,12 +8,6 @@ import org.slf4j.LoggerFactory;
 
 public class LatexTextDecorator extends TextDecorator {
     private static final Logger logger = LoggerFactory.getLogger(LatexTextDecorator.class);
-
-    Map<String, String> latexMap = Map.ofEntries(
-            Map.entry("&", "\\&"),
-            Map.entry("$", "\\$")
-    );
-
     public LatexTextDecorator(Transformer transformer){
         super(transformer);
     }
@@ -27,10 +21,8 @@ public class LatexTextDecorator extends TextDecorator {
     }
 
     public String decorate(String text){
-        for (Map.Entry<String, String> entry : latexMap.entrySet()) {
-            String escapedKey = Pattern.quote(entry.getKey());
-            text = text.replaceAll(escapedKey, entry.getValue());
-        }
+        text = text.replaceAll("&", "\\\\&");
+        text = text.replaceAll("\\$", "\\\\\\$");
         return text;
     }
 }
