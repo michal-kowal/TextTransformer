@@ -22,15 +22,17 @@ public class TextTransformerController {
     private static final Logger logger = LoggerFactory.getLogger(TextTransformerController.class);
 
     Map<String, String> mapOfClassNames = Map.ofEntries(
-            Map.entry("upper", "UpperTextDecorator"),
-            Map.entry("lower", "LowerTextDecorator"),
-            Map.entry("capitalize", "CapitalizeTextDecorator"),
-            Map.entry("inverse", "InverseTextDecorator"),
-            Map.entry("eliminate", "EliminateTextDecorator"),
-            Map.entry("minimize", "MinimizeTextDecorator"),
-            Map.entry("expand", "ExpandTextDecorator"),
-            Map.entry("latex", "LatexTextDecorator"),
-            Map.entry("strip", "StripTextDecorator"));
+        Map.entry("upper", "UpperTextDecorator"),
+        Map.entry("lower", "LowerTextDecorator"),
+        Map.entry("capitalize", "CapitalizeTextDecorator"),
+        Map.entry("inverse", "InverseTextDecorator"),
+        Map.entry("eliminate", "EliminateTextDecorator"),
+        Map.entry("minimize", "MinimizeTextDecorator"),
+        Map.entry("expand", "ExpandTextDecorator"),
+        Map.entry("latex", "LatexTextDecorator"),
+        Map.entry("strip", "StripTextDecorator"),
+        Map.entry("tag", "TagTextDecorator")
+    );
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public String get(@PathVariable String text,
