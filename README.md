@@ -26,5 +26,7 @@ Available actions:
 - expand
 - latex
 - strip
+- tag
+- hour
 
 Swagger dashboard is available at ```http://localhost:8080/swagger-ui/index.html```
